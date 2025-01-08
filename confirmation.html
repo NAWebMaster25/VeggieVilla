@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .confirmation {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .confirmation h2 {
+            color: #333;
+        }
+        .confirmation p {
+            font-size: 16px;
+            color: #555;
+        }
+        .confirmation ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .confirmation ul li {
+            margin: 10px 0;
+        }
+    </style>
+    <link href="Beauty.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	
+	<div class="pages">
+	<a href="Landing Page.html"> |VEGGIE VILLA HOME|</a>
+	<a href="2nd page.html"> |PREPARATIONS|</a>
+	<a href="menu.html"> |MENU| </a>
+	<a href="why vegetarian.html"> |WHY VEGETARIAN| </a>
+	<a href="works cited.html"> |REFRENCE PAGE| </a>
+	</div>
+	
+	<br>
+	<br>
+	
+    <div class="confirmation">
+      <h2>Order Confirmation</h2>
+        <p><strong>Name at Pickup:</strong> <span id="customerEmail"></span></p>
+        <h3>Order Items:</h3>
+        <ul id="orderItemsList"></ul>
+        <p>Thank you for your order!</p>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const orderDetails = {};
+            params.forEach((value, key) => {
+                orderDetails[key] = value;
+            });
+            return orderDetails;
+        }
+
+        // Get order details from the URL query string
+        const orderDetails = getQueryParams();
+
+        // Parse the items from the JSON string
+        const items = JSON.parse(orderDetails.items);
+
+        // Display email
+        document.getElementById('customerEmail').textContent = orderDetails.email;
+
+        // Display each item in the order
+        const orderItemsList = document.getElementById('orderItemsList');
+        items.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.quantity} x ${item.product}`;
+            orderItemsList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
+

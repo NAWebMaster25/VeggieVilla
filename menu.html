@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .menu {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item-name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .menu-item-price {
+            color: #4CAF50;
+        }
+        .order-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <link href="../../../Downloads/Beauty.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<div class="pages">
+	<a href="Landing Page.html"> |VEGGIE VILLA HOME|</a>
+	<a href="2nd page.html"> |PREPARATIONS|</a>
+	<a href="menu.html"> |MENU| </a>
+	<a href="why vegetarian.html"> |WHY VEGETARIAN| </a>
+	<a href="works cited.html"> |REFRENCE PAGE| </a>
+	</div>
+	
+    <h1>Restaurant Menu</h1>
+	
+	<h2>Entres</h2>
+    <div class="menu">
+        <div class="menu-item">
+            <span class="menu-item-name">Bean Wrap</span>
+            <span class="menu-item-price">$8.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Bean Bowl</span>
+            <span class="menu-item-price">$9.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Bean Flatbread</span>
+            <span class="menu-item-price">$10.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Spicy Bean Wrap</span>
+            <span class="menu-item-price">$9.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Spicy Bean Bowl</span>
+            <span class="menu-item-price">$10.99</span>
+        </div>
+		<div class="menu-item">
+            <span class="menu-item-name">Spicy Bean Flatbread</span>
+            <span class="menu-item-price">$11.99</span>
+		</div>
+    </div>
+	
+	<h2>Sides</h2>
+	 <div class="menu">
+        <div class="menu-item">
+            <span class="menu-item-name">Potato Wedges</span>
+            <span class="menu-item-price">$4.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Lentil Soup</span>
+            <span class="menu-item-price">$5.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Salad</span>
+            <span class="menu-item-price">$4.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Fruit Bowl</span>
+            <span class="menu-item-price">$3.99</span>
+        </div>
+    </div>
+	
+	<h2>Drinks</h2>
+		 <div class="menu">
+        <div class="menu-item">
+            <span class="menu-item-name">Water</span>
+            <span class="menu-item-price">$2.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Soda</span>
+            <span class="menu-item-price">$4.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Fruit Juice</span>
+            <span class="menu-item-price">$3.99</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-name">Coconut Water</span>
+            <span class="menu-item-price">$3.99</span>
+        </div>
+    </div>
+	
+
+    <button class="order-button" onclick="goToOrderPage()">Order Now</button>
+
+    <script>
+        function goToOrderPage() {
+            window.location.href = 'order.html';
+        }
+    </script>
+
+</body>
+</html>
+

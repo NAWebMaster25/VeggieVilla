@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+p{
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-size: 18px;
+}
+
+h1{
+	font-family: "Brush Script M7", "Lucida Handwriting";
+	font-size: 50px;
+}
+
+h3{
+	font-family: "Papyrus", "Brush Script M7";
+	font-size: 18px;
+}
+
+pages{
+	font-family: Times New Roman, Ariel;
+	font-size: 15px;
+}
+
+th{
+	text-align: left;
+	font-size: 20px;
+	border: 1px solid;
+}
+
+td{
+	text-align: left;
+	font-size: 18px;
+	border: 1px solid;
+}
+
+table{
+	border: 1px solid;
+}
+
+ul{
+	font-size: 18px;
+}

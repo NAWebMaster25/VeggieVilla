@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Here</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .order-form input, .order-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .order-form button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .order-form button:hover {
+            background-color: #45a049;
+        }
+        .item-container {
+            margin-bottom: 20px;
+        }
+        .remove-item {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+    <link href="Beauty.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>Customer Order Form</h1>
+    <div class="order-form">
+        <form id="orderForm">
+            <div id="itemsContainer">
+                <!-- Items will be dynamically added here -->
+            </div>
+            <button type="button" onclick="addItem()">Add Another Item</button>
+            <br><br>
+            <label for="name">Name:</label>
+            <input type="name" id="name" name="name" required>
+
+            <button type="button" onclick="submitOrder()">Submit Order</button>
+        </form>
+    </div>
+
+    <script>
+        let itemIndex = 0;
+
+        // Function to add a new item to the order
+        function addItem() {
+            itemIndex++;
+            const itemsContainer = document.getElementById('itemsContainer');
+            
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item-container');
+            itemDiv.setAttribute('id', `item-${itemIndex}`);
+
+            itemDiv.innerHTML = `
+                <label for="product-${itemIndex}">Product:</label>
+                <select id="product-${itemIndex}" name="product-${itemIndex}" required>
+                    <option value="Spicy Bean Wrap">Spicy Bean Wrap</option>
+                    <option value="Spicy Bean Bowl">Spicy Bean Bowl</option>
+                    <option value="Spicy Bean Flatbread">Spicy Bean Flatbread</option>
+                    <option value="Bean Wrap">Bean Wrap</option>
+                    <option value="Bean Bowl">Bean Bowl</option>
+                    <option value="Bean Flatbread">Bean Flatbread</option>
+                    <option value="Potato Wedges">Potato Wedges</option>
+                    <option value="Lentil Soup">Lentil Soup</option>
+                    <option value="Salad">String Beans</option>
+                    <option value="Fruit Bowl">Fruit Bowl</option>
+                    <option value="Water">Water</option>
+                    <option value="Soda">Soda</option>
+                    <option value="Fruit Juice">Fruit Juice</option>
+                    <option value="Coconut Water">Coconut Water</option>
+                </select>
+
+                <label for="quantity-${itemIndex}">Quantity:</label>
+                <input type="number" id="quantity-${itemIndex}" name="quantity-${itemIndex}" min="1" required>
+
+                <span class="remove-item" onclick="removeItem(${itemIndex})">Remove Item</span>
+            `;
+
+            itemsContainer.appendChild(itemDiv);
+        }
+
+        // Function to remove an item from the form
+        function removeItem(index) {
+            const itemDiv = document.getElementById(`item-${index}`);
+            itemDiv.remove();
+        }
+
+        // Function to submit the order
+        function submitOrder() {
+            const email = document.getElementById('name').value;
+            const orderItems = [];
+
+            // Collect all items
+            for (let i = 1; i <= itemIndex; i++) {
+                const product = document.getElementById(`product-${i}`)?.value;
+                const quantity = document.getElementById(`quantity-${i}`)?.value;
+
+                if (product && quantity) {
+                    orderItems.push({ product, quantity });
+                }
+            }
+
+            // If no items are added, show an alert
+            if (orderItems.length === 0) {
+                alert('Please add at least one product.');
+                return;
+            }
+
+            // Convert order items into a query string format
+            const queryString = new URLSearchParams({
+                email: email,
+                items: JSON.stringify(orderItems) // Store the items as a JSON string
+            }).toString();
+
+            // Redirect to the confirmation page with order details in the URL
+            window.location.href = 'confirmation.html?' + queryString;
+        }
+    </script>
+</body>
+</html>
+
+

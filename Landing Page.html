@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Veggie Villa Home</title>
+<link rel = "stylesheet"  type="text/css" href="Beauty.css">
+
+<script>
+	
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+  		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+  	var i;
+  	var x = document.getElementsByClassName("Slides");
+  	if (n > x.length) {slideIndex = 1}
+  	if (n < 1) {slideIndex = x.length}
+  	for (i = 0; i < x.length; i++) {
+    	x[i].style.display = "none";  
+  	}
+  	x[slideIndex-1].style.display = "block";  
+	}
+</script>
+
+</head>	
+
+<body>
+	<div class="pages">
+	<a href="Landing Page.html"> |VEGGIE VILLA HOME|</a>
+	<a href="2nd page.html"> |PREPARATIONS|</a>
+	<a href="menu.html"> |MENU| </a>
+	<a href="why vegetarian.html"> |WHY VEGETARIAN| </a>
+	<a href="works cited.html"> |REFRENCE PAGE| </a>
+	</div>
+	
+	<br>
+	<img src = "Veggie Villa.png" alt = "logo" border="3">
+	<h1> <marquee> Welcome to Veggie Villa </marquee> </h1>
+	<p align="center"> We are a local restaurant, known for our warm family friendly service. With great vegetarian options you are sure to find something just right for you. If you are looking to eat something tasty and vegetarian, you will find it here. Join us at Veggie Villa and enjoy a fun filled afternoon.</p>
+	
+	<hr>
+	
+	<div class = "slideContainer">
+		
+		<img class="Slides" src="Setting.jpg" style = "width:50%" alt="setting" border="3"/>
+		<img class="Slides" src="Wedges.jpg" style = "width:50%" alt="wedges" border="3"/>
+		<img class="Slides" src="Fruit Bowl.jpg" style = "width:50%" alt="fruit" border="3"/>
+		<img class="Slides" src="Drinks.jpg" style = "width:50%" alt="drinks" border="3"/>
+		<center><button class="display-left" onclick="plusDivs(-1)"> &#10094; </button>
+  		<button class="display-right" onclick="plusDivs(1)"> &#10095; </button> </center>
+	</div>	
+	<hr>
+	
+	<h3> REVIEWS: </h3>
+	<ul> 
+	<li>Overall, dining at this restaurant was a delight from start to finish. The delicious food, impeccable service, and charming ambiance made for a memorable experience.</li>
+	<li>This restaurant exceeded all my expectations. You do not often find a place where every element comes together so perfectly. I’ll be recommending it to all my friends and family. </li>
+	<li>If you’re a foodie like me, you’ll love this place! The menu has a fantastic selection of dishes, and we loved everything we tried. We only had good comments about the food. I can’t wait to come back again! </li>
+	<li>The menu offers a wide variety of options, and everything we tried was delicious. I especially loved the creative twists on classic dishes.</li>
+	<li>The service here is excellent. Our server was attentive without being intrusive. The entire staff worked seamlessly together to create a seamless dining experience. We never had to ask anything twice!</li>
+	<li>The staff here truly cares about their guests. They were attentive, courteous, and polite. They made us feel like VIPs.</li>
+	<li>The ambiance of this restaurant is simply fantastic! The cozy atmosphere, soft lighting, and elegant decor create the perfect setting for any special occasion. </li>
+	</ul>
+	
+	<hr>
+	
+	<h3> OPENING HOURS: </h3>
+		
+	<table style="width:25%">  
+	<tr>
+	<th>Day</th>
+	<th> Time </th>
+	</tr>
+	
+	<tr>
+	<td> Monday </td>
+	<td> 12:00 PM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Tuesday </td>
+	<td> 12:00 PM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Wednesday </td>
+	<td> 12:00 PM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Thursday </td>
+	<td> 12:00 PM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Friday </td>
+	<td> 12:00 PM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Saturday </td>
+	<td> 11:00 AM - 5:00 PM</td>
+	</tr>
+		
+	<tr>
+	<td> Sunday </td>
+	<td> 11:00 AM - 5:00 PM</td>
+	</tr>
+	</table>
+	
+	<hr>
+	
+	<h3> CONNECT WITH US</h3>
+	<p> VeggieVilla@gmail.com</p>
+	<p> 555-555-5555</p>
+	
+	<hr>
+	<h3> LOCATION </h3>
+	<p> 0000 Fullerton, Farrell, Virginia 12345 </p>
+	
+</body>
+</html>
